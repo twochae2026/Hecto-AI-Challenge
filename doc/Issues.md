@@ -24,16 +24,15 @@ UnidentifiedImageError: cannot identify image file '/content/test_image/TEST_088
   1. colab 개발, local 테스트, docker 제출(심사)로 실행환경에 유연한 코드 필요
   2. 다른 파일 내에서도 재사용 가능
 
-- 해결 방안:  
-  그 파일이 있는 위치를 기준으로 경로 계산
+- 해결 방안:  그 파일이 있는 위치를 기준으로 경로 계산
   ```
   from pathlib import Path
-import yaml
-
-BASE_DIR = Path(__file__).resolve().parent
-CFG_PATH = BASE_DIR / "config" / "config.yaml"
-
-cfg = yaml.safe_load(open(CFG_PATH))
-```
+  import yaml
+  
+  BASE_DIR = Path(__file__).resolve().parent
+  CFG_PATH = BASE_DIR / "config" / "config.yaml"
+  
+  cfg = yaml.safe_load(open(CFG_PATH))
+  ```
 
 </details>
